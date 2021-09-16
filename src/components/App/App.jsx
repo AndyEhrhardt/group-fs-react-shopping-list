@@ -10,7 +10,7 @@ import CompletedItemList from '../CompletedItemList/CompletedItemList.jsx';
 
 
 function App() {
-    let [itemList, setList] = useState([]);
+    let [itemList, setItemList] = useState([]);
 
     //Any variables and functions needed by Greg can go here:
     
@@ -18,15 +18,16 @@ function App() {
     
     //Any variables and functions needed by Tou can go here:
     useEffect(() => {
-        getList()
+        getItemList()
     
     }, [])
     
-    const getList = () => {
+    const getItemList = () => {
         axios.get('/list').then(response => {
-            setList(response.data)
+            setItemList(response.data)
         }).catch((error) => {
             console.log('error in GET', error);
+            alert('ERRPR can not add item')
         })
     }
     
