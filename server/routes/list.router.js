@@ -2,21 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool.js');
 
-// TODO - Add routes here...
-
-
-// GET list items from database
-// router.get('/', (req, res) => {
-//     console.log('Getting items from list');
-    
-//     const queryText = 'SELECT * FROM "tasks" ORDER BY "item";';
-// }).then((response) => {
-//     console.log('');
-    
-// }).catch((error) => {
-//     console.log(error);
-//     alert();
-// });
+//TODO - Add routes here...
 
 
 router.post('/', (req, res) => {
@@ -53,13 +39,13 @@ router.delete('/:id', (req, res) => {
     const itemId = req.params.id;
     const sqlText = 'DELETE FROM groceries WHERE id = $1;';
     pool.query(sqlText, [itemId])
-}).then((response) => {
-
+}).then((result) => {
+    console.log('DELETE items in /list');
+    res.send(200)
 }).catch((error) => {
     console.log(error);
-    alert();
+    alert('Could not delete');
 });
-
 
 
 module.exports = router;
