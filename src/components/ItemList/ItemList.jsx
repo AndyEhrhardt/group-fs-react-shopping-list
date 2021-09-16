@@ -5,13 +5,13 @@ function ItemList(props){
     <h2>Item List</h2>
     <ul>
         {props.list.map(item =>
-          (<li key={item.name}>{item.quantity} {item.unit} {item.completed}</li>)  
+          (<li key={item.name}>{item.name} {item.quantity} {item.unit} </li>)  
             
             )}
     </ul>
     </>
     )
-    
+
 }
 
 export default ItemList;
