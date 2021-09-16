@@ -48,7 +48,7 @@ function App() {
             getItemList();
         })
         .catch(err => {
-            alert('Error Adding Guest');
+            alert('Error Adding Item');
             console.log(err);
         })
     };
