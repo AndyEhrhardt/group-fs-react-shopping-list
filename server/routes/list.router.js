@@ -9,7 +9,7 @@ const pool = require('../modules/pool.js');
 router.get('/', (req, res) => {
     console.log('Getting items from list');
     
-    const queryText = 'SELECT * FROM "tasks" ORDER BY "item";';
+    const queryText = 'SELECT * FROM "groceries" ORDER BY "name";';
     pool.query(queryText)
     .then((result) => {
         console.log('Got this back from the database', result);
@@ -34,9 +34,35 @@ router.post('/', (req, res) => {
         .catch((error) => {
             console.log(`Error making database query ${sqlText}`, error);
             res.sendStatus(500); 
-        });
-});
+        })
+})
 
+
+// PUT ('/:id')
+// router.put('/:id', (req, res) => {
+//     console.log('PUT request received');
+    
+// }).then((response) => {
+
+// }).catch((error) => {
+//     console.log(error);
+//     alert();
+// });
+
+
+// DELETE ('/:id')
+router.delete('/:id', (req, res) => {
+    console.log('DELETE request received');
+    const itemId = req.params.id;
+    const sqlText = 'DELETE FROM groceries WHERE id = $1;';
+    pool.query(sqlText, [itemId]).then((result) => {
+        console.log('DELETE items in /list');
+        res.send(200)
+    }).catch((error) => {
+        console.log(error);
+        alert('Could not delete');
+    });
+});
 
 // PUT ('/:id')
 router.put('/:id', (req, res) => {

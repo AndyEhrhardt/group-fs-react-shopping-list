@@ -55,21 +55,13 @@ function App() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (newItemName && newItemQuantity) {
+        if (newItemName) {
             addItem();
         }
         else {
             alert('Must enter an item name and quantity.');
         }
     }
-    
-    // const markItemComplete = (event) => {
-    //     axios.put({
-    //         method: 'PUT',
-    //         url: '/list',
-    //         data: {something.id}
-    //     })
-    // }
     
     //Only edit the component you're working on below if props are needed
 
@@ -86,8 +78,10 @@ function App() {
             />
 
             {/*   <ResetAndClearButton /> */}
-            <ItemList />
-            {/*   <ItemList /> */}
+
+
+            <ItemList list={itemList} />
+
 
             {/*   <CompletedItemList /> */}
 
