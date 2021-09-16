@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool.js');
 
-// TODO - Add routes here...
+//TODO - Add routes here...
 
 
 // GET list items from database
@@ -34,8 +34,8 @@ router.post('/', (req, res) => {
         .catch((error) => {
             console.log(`Error making database query ${sqlText}`, error);
             res.sendStatus(500); 
-        })
-})
+        });
+});
 
 
 // PUT ('/:id')
