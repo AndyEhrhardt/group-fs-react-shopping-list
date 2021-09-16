@@ -9,7 +9,7 @@ const pool = require('../modules/pool.js');
 router.get('/', (req, res) => {
     console.log('Getting items from list');
     
-    const queryText = 'SELECT * FROM "tasks" ORDER BY "item";';
+    const queryText = 'SELECT * FROM "groceries" ORDER BY "name";';
     pool.query(queryText)
     .then((result) => {
         console.log('Got this back from the database', result);
