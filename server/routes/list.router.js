@@ -6,17 +6,17 @@ const pool = require('../modules/pool.js');
 
 
 //GET list items from database
-router.get('/', (req, res) => {
-    console.log('Getting items from list');
+//router.get('/', (req, res) => {
+//    console.log('Getting items from list');
+//    
+//    const queryText = 'SELECT * FROM "tasks" ORDER BY "item";';
+//}).then((response) => {
+//    console.log('');
     
-    const queryText = 'SELECT * FROM "tasks" ORDER BY "item";';
-}).then((response) => {
-    console.log('');
-    
-}).catch((error) => {
-    console.log(error);
-    alert();
-});
+//}).catch((error) => {
+//    console.log(error);
+//    alert();
+//});
 
 
 router.post('/', (req, res) => {
@@ -31,32 +31,32 @@ router.post('/', (req, res) => {
         .catch((error) => {
             console.log(`Error making database query ${sqlText}`, error);
             res.sendStatus(500); 
-        })
-})
+        });
+});
 
 
 //PUT ('/:id')
-router.put('/:id', (req, res) => {
-    console.log('PUT request received');
+// router.put('/:id', (req, res) => {
+//     console.log('PUT request received');
     
-}).then((response) => {
+// }).then((response) => {
 
-}).catch((error) => {
-    console.log(error);
-    alert();
-});
+// }).catch((error) => {
+//     console.log(error);
+//     alert();
+// });
 
 
-//DELETE ('/:id')
-router.delete('/:id', (req, res) => {
-    console.log('DELETE request received');
+// //DELETE ('/:id')
+// router.delete('/:id', (req, res) => {
+//     console.log('DELETE request received');
     
-}).then((response) => {
+// }).then((response) => {
 
-}).catch((error) => {
-    console.log(error);
-    alert();
-});
+// }).catch((error) => {
+//     console.log(error);
+//     alert();
+// });
 
 
 
