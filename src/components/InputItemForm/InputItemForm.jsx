@@ -1,5 +1,3 @@
-
-
 function inputItemForm(props) {
     return(
         <>
