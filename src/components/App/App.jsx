@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from '../Header/Header.jsx'
 import './App.css';
-import InputItemForm from '../InputItemForm/InputItemForm.jsx'
-import ResetAndClearButton from '../ResetAndClearButton/ResetAndClearButton.jsx'
-import ItemList from '../ItemList/ItemList.jsx'
-import CompletedItemList from '../CompletedItemList/CompletedItemList.jsx'
+import InputItemForm from '../InputItemForm/InputItemForm.jsx';
+import ResetAndClearButton from '../ResetAndClearButton/ResetAndClearButton.jsx';
+import ItemList from '../ItemList/ItemList.jsx';
+import CompletedItemList from '../CompletedItemList/CompletedItemList.jsx';
 
 //Any variables and functions needed by Greg can go here:
 
