@@ -34,9 +34,35 @@ function App() {
     //Any variables and functions needed by Anwar can go here:
     
     
-    
     //Any variables and functions needed by Andy can go here:
-    
+    let [newItemName, setNewItemName] = useState('');
+    let [newItemQuantity, setNewItemQuantity] = useState('');
+    let [newItemUnit, setNewItemUnit] = useState('');
+
+    const addItem = () => {
+        axios.post('/list', { name: newItemName, quantity: newItemQuantity, unit: newItemUnit })
+        .then(response => {
+            // clear inputs
+            setNewItemName('');
+            setNewItemQuantity('');
+            setNewItemUnit('');
+            getItemList();
+        })
+        .catch(err => {
+            alert('Error Adding Guest');
+            console.log(err);
+        })
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (newItemName && newItemQuantity) {
+            addItem();
+        }
+        else {
+            alert('Must enter an item name and quantity.');
+        }
+    }
     
     
     
