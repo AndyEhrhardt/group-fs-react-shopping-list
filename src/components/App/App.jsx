@@ -80,7 +80,9 @@ function App() {
 
             {/*   <ResetAndClearButton /> */}
 
+
             <ItemList list={itemList} />
+
 
             {/*   <CompletedItemList /> */}
 
