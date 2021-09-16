@@ -4,10 +4,7 @@ function ItemList(props){
   <>
     <h2>Item List</h2>
     <ul>
-        {props.list.map(item =>
-          (<li key={item.name}>{item.name} {item.quantity} {item.unit} </li>)  
-            
-            )}
+        {props.list.map(item =>( item.completed (<li key={item.name}>{item.name} {item.quantity} {item.unit} </li>)))}
     </ul>
     </>
     )
