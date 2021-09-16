@@ -3,12 +3,13 @@
 
 CREATE TABLE groceries (
 	id SERIAL PRIMARY KEY,
-	item VARCHAR(255) NOT NULL,
-    quantity VARCHAR(255) NOT NULL
-	unit VARCHAR(50) NOT NULL
+	name VARCHAR(80) NOT NULL,
+    quantity DECIMAL NOT NULL,
+	unit VARCHAR(20) NULL,
+	completed BOOLEAN DEFAULT FALSE
 );
 
-INSERT INTO groceries (item, quantity, unit)
-VALUES ('banana', '3', '20'), 
-('tomatoes', '1', '15'), 
-('onions', '1', '10');
+INSERT INTO groceries (name, quantity, unit)
+VALUES ('banana', '3', 'lb'), 
+('tomatoes', '1', 'kilo'), 
+('onions', '1', 'lb');
