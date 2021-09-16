@@ -22,7 +22,6 @@ import CompletedItemList from '../CompletedItemList/CompletedItemList.jsx';
 
 
 
-
 //Only edit the component you're working on below if props are needed
 function App() {
     return (
