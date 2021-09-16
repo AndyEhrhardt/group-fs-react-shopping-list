@@ -1,4 +1,4 @@
-function inputItemForm(props) {
+function InputItemForm(props) {
     return(
         <>
             <h3>Add New Grocery Item</h3>
@@ -36,3 +36,5 @@ function inputItemForm(props) {
         </>
     )
 }
+
+export default InputItemForm;
