@@ -30,6 +30,9 @@ function App() {
         })
     }
     
+    const deleteItem = () => {
+        axios.delete()
+    }
     //Any variables and functions needed by Anwar can go here:
     
     
