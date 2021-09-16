@@ -5,13 +5,6 @@ const pool = require('../modules/pool.js');
 //TODO - Add routes here...
 
 
-router.get('/', (req, res) => {
-    console.log('Getting items from list');
-    
-    const queryText = 'SELECT * FROM "tasks" ORDER BY "item";';
-
-
-
 router.post('/', (req, res) => {
     const item = req.body;
     const sqlText = `INSERT INTO groceries (name, quantity, unit)
@@ -24,9 +17,8 @@ router.post('/', (req, res) => {
         .catch((error) => {
             console.log(`Error making database query ${sqlText}`, error);
             res.sendStatus(500); 
-        })
-})
-
+        });
+});
 
 
 
