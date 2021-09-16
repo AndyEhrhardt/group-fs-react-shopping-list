@@ -6,24 +6,7 @@ import ResetAndClearButton from '../ResetAndClearButton/ResetAndClearButton.jsx'
 import ItemList from '../ItemList/ItemList.jsx';
 import CompletedItemList from '../CompletedItemList/CompletedItemList.jsx';
 
-//Any variables and functions needed by Greg can go here:
 
-
-
-//Any variables and functions needed by Tou can go here:
-
-
-
-//Any variables and functions needed by Anwar can go here:
-
-
-
-//Any variables and functions needed by Andy can go here:
-
-
-
-
-//Only edit the component you're working on below if props are needed
 function App() {
     return (
         <div className="App">
