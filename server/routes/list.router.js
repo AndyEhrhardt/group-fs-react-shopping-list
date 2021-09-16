@@ -6,17 +6,20 @@ const pool = require('../modules/pool.js');
 
 
 // GET list items from database
-// router.get('/', (req, res) => {
-//     console.log('Getting items from list');
+router.get('/', (req, res) => {
+    console.log('Getting items from list');
     
-//     const queryText = 'SELECT * FROM "tasks" ORDER BY "item";';
-// }).then((response) => {
-//     console.log('');
-    
-// }).catch((error) => {
-//     console.log(error);
-//     alert();
-// });
+    const queryText = 'SELECT * FROM "tasks" ORDER BY "item";';
+    pool.query(queryText)
+    .then((result) => {
+        console.log('Got this back from the database', result);
+        res.send(result.rows);
+    }).catch((error) => {
+        console.log(error);
+        alert('error in GET');
+        res.sendStatus(500);
+    });
+});
 
 
 router.post('/', (req, res) => {
@@ -36,28 +39,20 @@ router.post('/', (req, res) => {
 
 
 // PUT ('/:id')
-// router.put('/:id', (req, res) => {
-//     console.log('PUT request received');
-    
-// }).then((response) => {
-
-// }).catch((error) => {
-//     console.log(error);
-//     alert();
-// });
-
-
-// DELETE ('/:id')
-// router.delete('/:id', (req, res) => {
-//     console.log('DELETE request received');
-    
-// }).then((response) => {
-
-// }).catch((error) => {
-//     console.log(error);
-//     alert();
-// });
-
+router.put('/:id', (req, res) => {
+    let reqId = req.params.id;  // id parameter received from client request
+    console.log('PUT request received');
+    // Toggle boolean value for completed
+    let queryText = `UPDATE "groceries" SET "complete" = NOT "complete" WHERE "id" = $1 RETURNING *;`;
+    pool.query(queryText, [reqId]) // sending query to database via pool module, filtering client data through pg
+    .then((result) => {
+        console.log('Item complete status switched');
+        res.sendStatus(200); // Send back success
+    }).catch((error) => {
+        console.log(error);
+        res.sendStatus(500); // or send back the error
+    });
+});
 
 
 module.exports = router;
