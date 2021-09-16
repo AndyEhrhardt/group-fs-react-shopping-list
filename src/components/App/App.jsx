@@ -72,7 +72,13 @@ function App() {
         <div className="App">
             <Header />
 
-            {/*   <InputItemForm />  */}
+            {/*   <InputItemForm 
+                handleSubmit={handleSubmit}
+                addItem={addItem}
+                setNewItemName={setNewItemName}
+                setNewItemQuantity={setNewItemQuantity}
+                setNewItemUnit={setNewItemUnit}
+            />  */}
 
             {/*   <ResetAndClearButton /> */}
 
