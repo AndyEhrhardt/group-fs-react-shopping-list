@@ -22,14 +22,21 @@ import CompletedItemList from '../CompletedItemList/CompletedItemList.jsx'
 
 
 
+
+//Only edit the component you're working on below if props are needed
 function App() {
     return (
         <div className="App">
             <Header />
-            <InputItemForm />
-            <ResetAndClearButton />
-            <ItemList />
-            <CompletedItemList />
+
+            {/*   <InputItemForm />  */}
+
+            {/*   <ResetAndClearButton /> */}
+
+            {/*   <ItemList /> */}
+
+            {/*   <CompletedItemList /> */}
+
         </div>
     );
 }
