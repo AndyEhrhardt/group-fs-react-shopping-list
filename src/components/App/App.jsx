@@ -63,8 +63,7 @@ function App() {
         }
     }
     
-    
-    
+
     //Only edit the component you're working on below if props are needed
 
     return (
