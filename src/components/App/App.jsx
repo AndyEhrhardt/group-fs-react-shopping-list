@@ -50,7 +50,7 @@ function App() {
 
             {/*   <ResetAndClearButton /> */}
 
-            {/*   <ItemList /> */}
+            <ItemList list={itemList} />
 
             {/*   <CompletedItemList /> */}
 
