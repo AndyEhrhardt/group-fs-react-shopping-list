@@ -1,27 +1,49 @@
 
-function resetAllItems ({itemList}) {
-    // clear purchased status
-    // might need to call the PUT request here doing something like this:
-    for (item of itemList) {
-        item.completed = !completed;
-        }
-    props.getList();
-}
-
-function clearAllItems(event) {
-    // might have to call DELETE request here
-    props.getList();
-}
-
+// function resetAllItems ({itemList}) {
+     // clear purchased status
+     // might need to call the PUT request here doing something like this:
+//     for (item of itemList) {
+//         item.completed = !completed;
+//         }
+//     props.getList();
+// }
 
 function changeListItems(props) {
-    console.log('Resetting items ');
+
+    const handleClearList = (everythingInAList) => {
+        console.log('CreatureItem.jsx user clicked delete: ', creatureId);
+        // Call a method on props... pass this down from App.jsx
+        deleteList(everythingInAList);
+    }
+    
+    // console.log('Resetting items ');
     return (
         <>
-            <button onClick={/* entire list ??? */}>Reset</button>
-            <button onClick={/* entire list ??? */}>Clear</button>
+        <li>
+            {itemList}
+            <button onClick={() => handleClearList(itemList)}>Clear</button>
+            {/* <button onClick=>Reset</button> */}
+        </li>
         </>
     )    
 }
 
-export default changeListItems
+export default changeListItems;
+
+// function CreatureItem({creature, deleteCreature}) {
+
+//     const handleDelete = (creatureId) => {
+//         console.log('CreatureItem.jsx user clicked delete: ', creatureId);
+         // Call a method on props... pass this down from App.jsx
+//         deleteCreature(creatureId);
+//     }
+
+//     return (
+//         <li>
+//             {creature.name} is from {creature.origin}
+//             <button onClick={() => handleDelete(creature.id)}>Delete Creature</button>
+//         </li>
+//     )
+// }
+
+// export default CreatureItem;

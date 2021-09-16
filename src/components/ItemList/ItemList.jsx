@@ -1,10 +1,10 @@
-function ItemList(){
+function ItemList(props){
 
     return(
   <>
     <h2>Item List</h2>
     <ul>
-        {itemsList.map(item =>
+        {props.itemsList.map(item =>
           (<li key={item.name}>{item.quantity} {item.unit} {item.completed}</li>)  
             
             )}

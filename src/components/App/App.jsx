@@ -63,7 +63,13 @@ function App() {
         }
     }
     
-    
+    // const markItemComplete = (event) => {
+    //     axios.put({
+    //         method: 'PUT',
+    //         url: '/list',
+    //         data: {something.id}
+    //     })
+    // }
     
     //Only edit the component you're working on below if props are needed
 
@@ -80,7 +86,7 @@ function App() {
             />
 
             {/*   <ResetAndClearButton /> */}
-
+            <ItemList />
             {/*   <ItemList /> */}
 
             {/*   <CompletedItemList /> */}
