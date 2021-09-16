@@ -6,9 +6,6 @@ const pool = require('../modules/pool.js');
 
 
 // GET list items from database
-// router.get('/', (req, res) => {
-//     console.log('Getting items from list');
-    
 //     const queryText = 'SELECT * FROM "tasks" ORDER BY "item";';
 // }).then((response) => {
 //     console.log('');
