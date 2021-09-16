@@ -27,8 +27,8 @@ function InputItemForm(props) {
                 <input
                     type="text"
                     placeholder="Unit"
-                    value={props.newUnitName}
-                    onChange={(evt) => props.setnewUnitName(evt.target.value)}
+                    value={props.newItemUnit}
+                    onChange={(evt) => props.setNewItemUnit(evt.target.value)}
                 />
             
             <button type="submit">Add Item</button>
