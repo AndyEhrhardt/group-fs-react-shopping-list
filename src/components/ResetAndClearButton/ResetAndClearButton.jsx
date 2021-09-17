@@ -15,8 +15,11 @@ function changeListItems(props) {
         // Call a method on props... pass this down from App.jsx
         deleteList(everythingInAList);
     }
+
+    const handleResetAllItems (allItems)
     
     // console.log('Resetting items ');
+    
     return (
         <>
         <li>

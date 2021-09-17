@@ -53,6 +53,14 @@ function App() {
         })
     };
 
+    // const markItemComplete = (event) => {
+        //     axios.put({
+        //         method: 'PUT',
+        //         url: '/list',
+        //         data: {something.id}
+        //     })
+        // }
+
     const handleSubmit = (event) => {
         event.preventDefault();
         if (newItemName) {
