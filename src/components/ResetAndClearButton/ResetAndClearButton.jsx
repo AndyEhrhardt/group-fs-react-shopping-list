@@ -3,15 +3,15 @@ function ChangeAllItems({itemList, deleteItem, markCompleted}) {
 
     const clearList = () => {
         console.log('cliecked clear button');
-        for( item of itemlist ) {
-            deleteItem(item);
+        for(let item of itemList ) {
+            deleteItem(item.id);
         }
     }
 
     const resetAllItems = () => {
         console.log('Resetting items ');
-        for( item of itemList ) {
-            markCompleted(item);
+        for(let item of itemList ) {
+            markCompleted(item.id);
         }
     }
         

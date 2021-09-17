@@ -53,13 +53,30 @@ function App() {
         })
     };
 
-    // const markItemComplete = (event) => {
-        //     axios.put({
-        //         method: 'PUT',
-        //         url: '/list',
-        //         data: {something.id}
-        //     })
-        // }
+    // const markItemComplete = (Id) => {
+    //     axios({
+    //         method: 'PUT',
+    //         url: `/list/${Id}`,
+    //     })
+    //     .then(response => {
+    //         console.log('Item marked as purchased');
+    //         getItemList();
+    //     }).catch(error => {
+    //         console.log('Error in put', error);
+    //         // alert('"mark as purchased" failed');
+    //     })
+    // }
+
+    // const removeItem = (Id) => {
+    //     axios.delete(`/list/${Id}`)
+    //     .then(function (response) {
+    //         console.log('Item removed!');
+    //         getItemList(); // Refresh the list of tasks
+    //     }).catch(function (error) {
+    //         // alert('Something went wrong!');
+    //         console.log('Error in DELETE', error);
+    //     });
+    // }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -87,8 +104,8 @@ function App() {
 
             {/*   <ResetAndClearButton /> */}
             <ChangeAllItems itemList={itemList}
-                            deleteItem={/* delete function name */} 
-                            markCompleted={/* put function name */}
+                            deleteItem={removeItem} 
+                            markCompleted={markItemComplete}
             />
 
             <ItemList list={itemList} />
