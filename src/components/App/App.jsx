@@ -10,6 +10,7 @@ import CompletedItemList from '../CompletedItemList/CompletedItemList.jsx';
 
 function App() {
     let [itemList, setItemList] = useState([]);
+    let [itemToDelete, setItemToDelete] = useState();
 
     //Any variables and functions needed by Greg can go here:
     
@@ -29,7 +30,14 @@ function App() {
             alert('ERRPR can not add item')
         })
     }
-    
+    const setItemToDelete = (itemToDeleteId) => {
+        axios.delete('/list:id').then(response => {
+            setItemToDelete(itemToDeleteId);
+        }).catch(error => {
+            console.log('error in DELETE', error);
+            alert('CAN NOT DELETE ITEM')
+        })
+    }
     //Any variables and functions needed by Anwar can go here:
     
     
