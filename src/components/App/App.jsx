@@ -3,7 +3,7 @@ import axios from 'axios';
 import Header from '../Header/Header.jsx';
 import './App.css';
 import InputItemForm from '../InputItemForm/InputItemForm.jsx';
-import ResetAndClearButton from '../ResetAndClearButton/ResetAndClearButton.jsx';
+import ChangeAllItems from '../ResetAndClearButton/ResetAndClearButton.jsx';
 import ItemList from '../ItemList/ItemList.jsx';
 import CompletedItemList from '../CompletedItemList/CompletedItemList.jsx';
 
@@ -70,6 +70,7 @@ function App() {
         })
     };
 
+
     const handleSubmit = (event) => {
         event.preventDefault();
         if (newItemName) {
@@ -100,7 +101,10 @@ function App() {
             />
 
             {/*   <ResetAndClearButton /> */}
-
+            <ChangeAllItems itemList={itemList}
+                            deleteItem={removeItem} 
+                            markCompleted={markItemComplete}
+            />
 
             <ItemList list={itemList} />
 

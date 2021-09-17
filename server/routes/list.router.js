@@ -68,7 +68,7 @@ router.put('/:id', (req, res) => {
     let reqId = req.params.id;  // id parameter received from client request
     console.log('PUT request received');
     // Toggle boolean value for completed
-    let queryText = `UPDATE "groceries" SET "complete" = NOT "complete" WHERE "id" = $1 RETURNING *;`;
+    let queryText = `UPDATE "groceries" SET "completed" = NOT "completed" WHERE "id" = $1 RETURNING *;`;
     pool.query(queryText, [reqId]) // sending query to database via pool module, filtering client data through pg
     .then((result) => {
         console.log('Item complete status switched');
