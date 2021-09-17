@@ -30,7 +30,7 @@ function App() {
             alert('ERRPR can not add item')
         })
     }
-    const setItemToDelete = (itemToDeleteId) => {
+    const removeItem = (itemToDeleteId) => {
         axios.delete('/list:id').then(response => {
             setItemToDelete(itemToDeleteId);
         }).catch(error => {
@@ -95,7 +95,7 @@ function App() {
             {/*   <ResetAndClearButton /> */}
             <ChangeAllItems itemList={itemList}
                             deleteItem={removeItem} 
-                            markCompleted={markItemComplete}
+                            //markCompleted={markItemComplete}
             />
 
             <ItemList list={itemList} />
