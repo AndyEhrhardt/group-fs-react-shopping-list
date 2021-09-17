@@ -3,13 +3,14 @@ import axios from 'axios';
 import Header from '../Header/Header.jsx';
 import './App.css';
 import InputItemForm from '../InputItemForm/InputItemForm.jsx';
-import ChangeAllItems from '../ResetAndClearButton/ResetAndClearButton.jsx';
+import ResetAndClearButton from '../ResetAndClearButton/ResetAndClearButton.jsx';
 import ItemList from '../ItemList/ItemList.jsx';
 import CompletedItemList from '../CompletedItemList/CompletedItemList.jsx';
 
 
 function App() {
     let [itemList, setItemList] = useState([]);
+    let [itemToDelete, deleteItem] = useState('');
 
     //Any variables and functions needed by Greg can go here:
     
@@ -30,8 +31,14 @@ function App() {
         })
     }
     
-    const deleteItem = () => {
-        axios.delete()
+    const deleteItem = (itemToDeleteId) => {
+
+        axios.delete('/list:id').then(response => {
+            deleteItem(itemToDeleteId);
+        }).catch(error => {
+            console.log('error in DELETE', error);
+            alert('CAN NOT DELETE ITEM')
+        })
     }
     //Any variables and functions needed by Anwar can go here:
     
@@ -56,18 +63,15 @@ function App() {
         })
     };
 
-
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (newItemName) {
+        if (newItemName && newItemQuantity) {
             addItem();
         }
         else {
             alert('Must enter an item name and quantity.');
         }
     }
-    
-
     
 
     //Only edit the component you're working on below if props are needed
@@ -85,13 +89,8 @@ function App() {
             />
 
             {/*   <ResetAndClearButton /> */}
-            <ChangeAllItems itemList={itemList}
-                            deleteItem={removeItem} 
-                            markCompleted={markItemComplete}
-            />
 
-            <ItemList list={itemList} />
-
+            {}
 
             {/*   <CompletedItemList /> */}
 
