@@ -53,30 +53,6 @@ function App() {
         })
     };
 
-    // const markItemComplete = (Id) => {
-    //     axios({
-    //         method: 'PUT',
-    //         url: `/list/${Id}`,
-    //     })
-    //     .then(response => {
-    //         console.log('Item marked as purchased');
-    //         getItemList();
-    //     }).catch(error => {
-    //         console.log('Error in put', error);
-    //         // alert('"mark as purchased" failed');
-    //     })
-    // }
-
-    // const removeItem = (Id) => {
-    //     axios.delete(`/list/${Id}`)
-    //     .then(function (response) {
-    //         console.log('Item removed!');
-    //         getItemList(); // Refresh the list of tasks
-    //     }).catch(function (error) {
-    //         // alert('Something went wrong!');
-    //         console.log('Error in DELETE', error);
-    //     });
-    // }
 
     const handleSubmit = (event) => {
         event.preventDefault();
