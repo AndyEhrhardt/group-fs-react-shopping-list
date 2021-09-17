@@ -3,7 +3,7 @@ import axios from 'axios';
 import Header from '../Header/Header.jsx';
 import './App.css';
 import InputItemForm from '../InputItemForm/InputItemForm.jsx';
-import ResetAndClearButton from '../ResetAndClearButton/ResetAndClearButton.jsx';
+import ChangeAllItems from '../ResetAndClearButton/ResetAndClearButton.jsx';
 import ItemList from '../ItemList/ItemList.jsx';
 import CompletedItemList from '../CompletedItemList/CompletedItemList.jsx';
 
@@ -86,7 +86,10 @@ function App() {
             />
 
             {/*   <ResetAndClearButton /> */}
-
+            <ChangeAllItems itemList={itemList}
+                            deleteItem={/* delete function name */} 
+                            markCompleted={/* put function name */}
+            />
 
             <ItemList list={itemList} />
 

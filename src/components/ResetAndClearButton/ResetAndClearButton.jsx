@@ -1,52 +1,28 @@
 
-// function resetAllItems ({itemList}) {
-     // clear purchased status
-     // might need to call the PUT request here doing something like this:
-//     for (item of itemList) {
-//         item.completed = !completed;
-//         }
-//     props.getList();
-// }
+function ChangeAllItems({itemList, deleteItem, markCompleted}) {
 
-function changeListItems(props) {
-
-    const handleClearList = (everythingInAList) => {
-        console.log('CreatureItem.jsx user clicked delete: ', creatureId);
-        // Call a method on props... pass this down from App.jsx
-        deleteList(everythingInAList);
+    const clearList = () => {
+        console.log('cliecked clear button');
+        for( item of itemlist ) {
+            deleteItem(item);
+        }
     }
 
-    const handleResetAllItems (allItems)
-    
-    // console.log('Resetting items ');
-    
+    const resetAllItems = () => {
+        console.log('Resetting items ');
+        for( item of itemList ) {
+            markCompleted(item);
+        }
+    }
+        
     return (
         <>
-        <li>
-            {itemList}
-            <button onClick={() => handleClearList(itemList)}>Clear</button>
-            {/* <button onClick=>Reset</button> */}
-        </li>
+        <div className="BigButtons">
+            <button onClick={ () => resetAllItems(itemList) }>Reset</button>
+            <button onClick={ () => clearList(itemList) }>Clear</button>
+        </div>
         </>
     )    
 }
 
-export default changeListItems;
-
-// function CreatureItem({creature, deleteCreature}) {
-
-//     const handleDelete = (creatureId) => {
-//         console.log('CreatureItem.jsx user clicked delete: ', creatureId);
-         // Call a method on props... pass this down from App.jsx
-//         deleteCreature(creatureId);
-//     }
-
-//     return (
-//         <li>
-//             {creature.name} is from {creature.origin}
-//             <button onClick={() => handleDelete(creature.id)}>Delete Creature</button>
-//         </li>
-//     )
-// }
-
-// export default CreatureItem;
+export default ChangeAllItems;
