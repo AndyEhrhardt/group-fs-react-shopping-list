@@ -65,7 +65,7 @@ function App() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (newItemName && newItemQuantity) {
+        if (newItemName) {
             addItem();
         }
         else {
