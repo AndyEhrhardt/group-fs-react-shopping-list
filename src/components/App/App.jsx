@@ -31,7 +31,24 @@ function App() {
     }
     
     //Any variables and functions needed by Anwar can go here:
+
+    // function CreatureItem({creature, deleteCreature}) {
+
+    //     const handleDelete = (creatureId) => {
+    //         console.log('CreatureItem.jsx user clicked delete: ', creatureId);
+    //         // Call a method on props... pass this down from App.jsx
+    //         deleteCreature(creatureId);
+    //     }
     
+    //     return (
+    //         <li>
+    //             {creature.name} is from {creature.origin}
+    //             <button onClick={() => handleDelete(creature.id)}>Delete Creature</button>
+    //         </li>
+    //     )
+    // }
+
+
     
     //Any variables and functions needed by Andy can go here:
     let [newItemName, setNewItemName] = useState('');
@@ -63,7 +80,9 @@ function App() {
         }
     }
     
-
+     
+    
+   
     
 
     //Only edit the component you're working on below if props are needed

@@ -21,7 +21,6 @@ router.get('/', (req, res) => {
     });
 });
 
-
 router.post('/', (req, res) => {
     const item = req.body;
     const sqlText = `INSERT INTO groceries (name, quantity, unit)
